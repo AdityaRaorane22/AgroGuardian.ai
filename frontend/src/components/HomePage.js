@@ -221,7 +221,7 @@ function HomePage({ onLogin }) {
         <div style={styles.heroSection}>
           <div style={styles.logo}>
             <div style={styles.logoIcon}>🌾</div>
-            <div style={styles.logoText}>AgroGuardian AI</div>
+            <div style={styles.logoText}>AgroGuardian.ai</div>
           </div>
           
           <h1 style={styles.headline}>
