@@ -1,0 +1,85 @@
+/* styles.css - plain CSS (no Tailwind) */
+
+/* Root / body */
+:root{
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --emerald-600: #10b981;
+  --bg-1: linear-gradient(135deg,#ecfdf5 0%, #dffaf0 100%);
+  --card-shadow: 0 8px 30px rgba(16,24,40,0.08);
+  --glass: rgba(255,255,255,0.85);
+  --muted: #6b7280;
+}
+
+html,body,#root { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg-1); }
+
+/* App container */
+.app-root { min-height:100vh; display:flex; flex-direction:column; }
+
+/* Header */
+.app-header {
+  background: linear-gradient(90deg, var(--green-600), var(--emerald-600));
+  color: white;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+.header-inner { max-width:1200px; margin:0 auto; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.header-title h1 { margin:0; font-size:26px; letter-spacing:-0.3px; }
+.header-sub { margin:0; font-size:13px; opacity:0.9; }
+
+/* City input pill */
+.city-pill {
+  display:flex; align-items:center; gap:8px; padding:8px 12px; background: rgba(255,255,255,0.12); border-radius:10px;
+}
+.city-pill input { background:transparent; border:none; outline:none; color:white; width:110px; }
+
+/* Tab nav */
+.tab-nav { background:white; border-bottom:1px solid #e6e6e6; position:sticky; top:0; z-index:20; }
+.tab-row { max-width:1200px; margin:0 auto; display:flex; gap:6px; }
+.tab-btn { padding:14px 18px; background:transparent; border:none; cursor:pointer; color:var(--muted); font-weight:600; }
+.tab-btn.active { color: var(--green-600); border-bottom:3px solid var(--green-600); }
+
+/* Container for main content */
+.container { max-width:1200px; margin:28px auto; padding:0 18px; flex:1; }
+
+/* Cards */
+.card { background:white; border-radius:16px; padding:20px; box-shadow: var(--card-shadow); }
+.big-button {
+  width:100%; padding:14px; border-radius:12px; border:none; cursor:pointer; font-weight:700;
+  background: linear-gradient(90deg,var(--green-600), var(--emerald-600)); color:white;
+  box-shadow: 0 8px 20px rgba(16,184,129,0.12);
+}
+.big-button:disabled { opacity:0.6; cursor:not-allowed; }
+
+/* Upload box */
+.upload-box { border:2px dashed #c7f0d9; border-radius:12px; padding:30px; text-align:center; cursor:pointer; }
+
+/* Results grid */
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+
+/* Toast / error */
+.toast { position:fixed; left:50%; transform:translateX(-50%); top:18px; background:#ffe6e6; color:#7f1d1d; padding:12px 18px; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.08); }
+
+/* Chat pane */
+.chat-wrapper { display:flex; flex-direction:column; height:600px; border-radius:12px; overflow:hidden; }
+.chat-header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; color:white; background:linear-gradient(90deg,var(--green-600),var(--emerald-600)); }
+.chat-messages { padding:18px; overflow:auto; flex:1; background:linear-gradient(180deg,#fbfff9,#f7fffa); }
+.msg { max-width:80%; padding:12px 14px; border-radius:14px; box-shadow:0 6px 18px rgba(2,6,23,0.04); margin-bottom:12px; }
+.msg.user { margin-left:auto; background:linear-gradient(90deg,var(--green-600),var(--emerald-600)); color:white; border-bottom-right-radius:4px; }
+.msg.assistant { margin-right:auto; background:#f3f4f6; color:#111827; border-top-left-radius:4px; }
+
+/* Input area */
+.chat-input { display:flex; gap:8px; padding:12px; border-top:1px solid #eaeaea; background:white; }
+.chat-input input { flex:1; padding:12px 14px; border-radius:10px; border:1px solid #e6e6e6; outline:none; }
+
+/* Small helpers */
+.kv { font-size:13px; color:var(--muted); }
+.stat-num { font-size:28px; font-weight:800; color:#0f172a; }
+.badge-good { background:#ecfdf5; color:#065f46; padding:6px 8px; border-radius:999px; }
+.badge-bad { background:#fff1f2; color:#b91c1c; padding:6px 8px; border-radius:999px; }
+
+/* responsive */
+@media (max-width:900px){
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+}

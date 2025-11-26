@@ -1,0 +1,32 @@
+# Environment variables
+.env
+.env.*
+
+# Virtual environment
+venv/
+
+# Uploads folder (user-submitted files)
+uploads/
+
+# Dataset folders (large files, not versioned)
+Plant_Disease_Dataset/
+data/
+datasets/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Model weights and artifacts
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.keras
+
+# Logs
+logs/
+*.log
